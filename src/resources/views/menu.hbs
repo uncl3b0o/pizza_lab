@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pizza - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Font style links -->
+	<link rel="stylesheet" href="/css/css/fontawesome-free-6.0.0-web/css/all.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+<body>
+	<section class="home-slider owl-carousel img" style="background-image: url(images/bg_1.jpg);">
+
+      <div class="slider-item" style="background-image: url(images/bg_3.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+
+            <div class="col-md-7 col-sm-12 text-center ftco-animate">
+            	<h1 class="mb-3 mt-5 bread">Our Menu</h1>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="/">Home</a></span> <span>Menu</span></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+		<section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-3 mt-5 pt-5">
+          <div class="col-md-7 heading-section text-center ftco-animate">
+            <h2 class="mb-4">Our Menu Pricing</h2>
+            <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
+            <p class="mt-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+        
+    </section>
+	<form action="/menu/search" method="GET" class="d-flex">
+	<input name="q" type="text" class="form-control" placeholder="Search" id="search-menu"/>
+	<button type="submit">Go</button>
+    </form>
+	 <section class="ftco-menu">
+		 <div class="container-fluid">
+			 <div class="row d-md-flex">
+				<div class="col-lg-12 ftco-animate p-md-5">
+					<div class="row">
+						 <div class="col-md-12 nav-link-wrap mb-5">
+							 <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                <form action="/menu/pizzas" method="POST">
+                                     <button type="submit">Pizzas</button>
+								</form>
+								<form action="/menu/drinks" method="POST">
+                                     <button type="submit">Drinks</button>
+								</form>
+							 </div>
+						 </div>
+							<!--FOOD-->
+						  <div class="col-md-12 d-flex align-items-center">
+							   <div class="tab-content ftco-animate" id="v-pills-tabContent">
+								   <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-1-tab">
+									   <div class="row render-menu">
+										   	{{#if pizzas}}
+										   {{#each pizzas}}
+										   <div class="col-md-4 text-center">
+											   <div class="menu-wrap">
+												   <a href="/menu/{{this._id}}" class="menu-img img mb-4" style="background-image: url({{this.image}});"></a>
+													<div class="text">
+														<h3><a href="/menu/{{this._id}}">{{this.name}}</a></h3>
+														<p>{{this.description}}</p>
+														<p class="price"><span>{{this.cost}}</span></p>
+														<form action="/cart" method="POST">
+															<input type="hidden" name="id" value={{this._id}}>
+															<input type="hidden" name="qty" value=1>
+												            <button class="btn btn-dark">Add to cart</p>
+														</form>
+													</div>
+											   </div>
+										   </div>
+										   {{/each}}
+										   {{/if}}
+										   {{#if drinks}}
+										    {{#each drinks}}
+										   <div class="col-md-4 text-center">
+											   <div class="menu-wrap">
+												   <a href="/menu/{{this._id}}" class="menu-img img mb-4" style="background-image: url({{this.image}});"></a>
+													<div class="text">
+														<h3><a href="/menu/{{this._id}}">{{this.name}}</a></h3>
+														<p>{{this.description}}</p>
+														<p class="price"><span>{{this.cost}}</span></p>
+														<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
+													</div>
+											   </div>
+										   </div>
+										   {{/each}}
+										   {{/if}}
+									   </div>
+								   </div>
+							   </div>
+						  </div>
+					 </div>
+				 </div>
+					
+				</div>
+
+
+			 </div>
+		 </div>
+	 </section>
+	
+	 </script>
+</body>

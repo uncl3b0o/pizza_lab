@@ -1,0 +1,74 @@
+{{#if pizzas}}
+    <section class="ftco-section ftco-menu">
+            <div class="container">
+                <div class="row justify-content-center mb-5 pb-3">
+                    <div class="col-md-7 heading-section ftco-animate text-center">
+                        <h2 class="mb-4">{{pizzas.name}}</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row mb-5 pb-3 mt-5 pt-5">
+                    <div class="col-md-4 img" style="background-image: url({{pizzas.image}}); height: 350px;">
+                    </div>
+        
+                    <div class="col-md-8">
+                        <div class=" heading-section text-center ftco-animate">
+                            <h2>Description</h2>
+                        </div>
+                        <div class="text-center row justify-content-center mt-5">
+                            <p class="col-md-5">{{pizzas.description}}</p>
+                            <!-- <p class="col-md-5">Sò diệp mọng nước từ tỉnh Hokkaido, Nhật Bản được kết hợp hoàn hảo với sốt miso ngọt và bông cải non nướng giúp nâng tầm hương vị món ăn thêm đậm đà.</p> -->
+                        </div>
+                        <div class="container">
+                            <div class="container">
+                                <div class="row d-md-flex">
+                                    <div class=" ftco-animate p-md-5">
+                                        <div class="row">
+                                            <div class="col nav-link-wrap mb-5">
+                                                <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                    {{!-- <a class="nav-link active" id="sizes-tab" data-toggle="pill" href="#sizes" role="tab" aria-controls="sizes" aria-selected="true">Size S</a>
+                    
+                                                    <a class="nav-link" id="sizem-tab" data-toggle="pill" href="#sizem" role="tab" aria-controls="sizem" aria-selected="false">Size M</a>
+                    
+                                                    <a class="nav-link" id="sizel-tab" data-toggle="pill" href="#sizel" role="tab" aria-controls="sizel" aria-selected="false">Size L</a> --}}
+                                                </div>
+                                            </div>
+                                            <div class="d-flex cold mt-2 ml-5">
+                                        
+                                                <div class="tab-content ftco-animate" id="v-pills-tabContent">
+                    
+                                                    <div class="tab-pane fade show active" id="sizes" role="tabpanel" aria-labelledby="sizes-tab">
+                                                        <div>
+                                                            <p class="price" style="font-size: 18px;"><span>{{pizzas.cost}}</span></p>
+                                                        </div>
+                                                    </div>
+                    
+                                                    {{!-- <div class="tab-pane fade" id="sizem" role="tabpanel" aria-labelledby="sizem-tab">
+                                                        <div>
+                                                            <p class="price" style="font-size: 18px;"><span>369.000vnđ</span></p>
+                                                        </div>
+                                                    </div> --}}
+                    
+                                                    {{!-- <div class="tab-pane fade" id="sizel" role="tabpanel" aria-labelledby="sizel-tab">
+                                                        <div>
+                                                            <p class="price" style="font-size: 18px;"><span>439.000vnđ</span></p>
+                                                        </div>
+                                                    </div> --}}
+                                                </div>
+                                            </div>
+                                            <div class="ml-5 mt-2">
+                                                <p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {{/if}}

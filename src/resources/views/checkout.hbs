@@ -1,0 +1,88 @@
+
+    <section class="home-slider owl-carousel img" style="background-image: url(images/bg_1.jpg);">
+
+      <div class="slider-item" style="background-image: url(images/bg_3.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+
+            <div class="col-md-7 col-sm-12 text-center ftco-animate">
+            	<h1 class="mb-3 mt-5 bread">Order</h1>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Order</span></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--CHECKOUT FORM-->
+
+	<section class="ftco-section ftco-menu">
+    	<form method="post" action="/checkout/infopost">
+            <div class="container d-flex justify-content-center">
+                <div class="checkout-form">
+                    <div class="container">
+                        <div class="text-center">
+                            <h2>Customer Information</h2>
+                        </div>
+                    </div>
+                    <div class="checkout-content-form container">
+                        <div class="checkout-content">
+                            <div class="form-input">
+                                <label for="fullname"><p>Full Name</p></label>
+                                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name">
+                            </div>
+                            <div class="form-input">
+                                <label for="mail"><p>Email</p></label>
+                                <input type="email" id="mail" name="mail" placeholder="Enter your email">
+                            </div>
+                            <div class="form-input">
+                                <label for="phone"><p>Phone Number</p></label>
+                                <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-input">
+                                <label for="address"><p>Address</p></label>
+                                <input type="text" id="address" name="address" placeholder="Enter your address">
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="wrap cf" style="margin-top: -5rem;">
+                <div class="cart">
+                    <!--    <ul class="tableHead">
+                            <li class="prodHeader">Product</li>
+                            <li>Quantity</li>
+                            <li>Total</li>
+                            <li>Remove</li>
+                        </ul>-->
+                    <ul class="cartWrap">
+
+                    {{#each sessions.cart}}
+                        <li class="items odd">
+                            <div class="infoWrap"> 
+                                <div class="cartSection">
+                                    <img src={{this._id.image}} alt="" class="itemImg" />
+                                    <p class="itemNumber"></p>
+                                    <h3>{{this._id.name}}</h3>
+                                    <p>{{this.qty}} x </p> 
+                                </div>                    
+                                <div class="prodTotal cartSection">
+                                    <p>{{this._id.cost}}.000d</p>
+                                </div>
+                            </div>
+                        </li>
+                    {{/each}}
+                    
+                    <!--<li class="items even">Item 2</li>-->
+            
+                </ul>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <input type="submit" value="Continue" class="btn btn-primary py-3 px-5">
+            </div>
+        </form>
+    </section>

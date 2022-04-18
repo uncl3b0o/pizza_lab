@@ -1,0 +1,66 @@
+<section class="home-slider owl-carousel img" style="background-image: url(images/bg_1.jpg);">
+
+      <div class="slider-item" style="background-image: url(images/bg_3.jpg);">
+      	<div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text justify-content-center align-items-center">
+
+            <div class="col-md-7 col-sm-12 text-center ftco-animate">
+            	<h1 class="mb-3 mt-5 bread">Cart</h1>
+	            <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Cart</span></p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!--SHOPPING CART-->
+
+	<section>
+        <div class="wrap cf">
+            <div class="heading-cart cf">
+              <h1>My Cart</h1>
+              <a href="menu.html" class="btn btn-white btn-outline-white" style="float: right;">Continue Shopping</a>
+            </div>
+            <div class="cart">
+          <!--    <ul class="tableHead">
+                <li class="prodHeader">Product</li>
+                <li>Quantity</li>
+                <li>Total</li>
+                 <li>Remove</li>
+              </ul>-->
+                <ul class="cartWrap">
+
+                  {{#each sessions.cart}}
+                    <li class="items odd">
+                        <div class="infoWrap"> 
+                            <div class="cartSection">
+                                <img src={{this._id.image}} alt="" class="itemImg" />
+                                <p class="itemNumber"></p>
+                                <h3>{{this._id.name}}</h3>
+                                <p> <input type="number"  class="qty" value={{this.qty}} min="1"/> x </p> 
+                            </div>                    
+                            <div class="prodTotal cartSection">
+                                <p>{{this._id.cost}}.000d</p>
+                            </div>
+                            <div class="cartSection removeWrap">
+                                <a href="#" class="remove">x</a>
+                            </div>
+                        </div>
+                    </li>
+                  {{/each}}
+                
+                <!--<li class="items even">Item 2</li>-->
+           
+              </ul>
+            </div>
+            
+            <div class="subtotal cf">
+              <ul style="list-style: none;">
+                  <li class="totalRow final" id="cart-total"><span class="label">Total</span><span class="value">{{total}}.000d</span></li>
+                <li class="totalRow"><a href="checkout" class="btn btn-white btn-outline-white" id="#checkout">Check out</a></li>
+              </ul>
+            </div>
+          </div>
+    </section>
